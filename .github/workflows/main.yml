@@ -2,10 +2,10 @@ name: Upload Python Package
 
 on:
   schedule:
-    - cron: '27 14 * * *'
+    - cron: '36 14 * * *'
 
 jobs:
-  deploy:
+  Auto-Attendance:
 
     runs-on: ubuntu-latest
 
@@ -15,10 +15,16 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.7'
+      - name: Clone and SetUp pip
+        run: |
+          echo 'start clone'
+          git clone https://github.com/ScottDemo/fuckTodayStudy.git
+          cd fuckTodayStudy
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
-      - name: Publish package
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
+      - name: Last Run
         run: 
-          python ../../index.py
+          echo 'start running'
+          python3 index.py
