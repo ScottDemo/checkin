@@ -2,7 +2,7 @@ name: Upload Python Package
 
 on:
   schedule:
-    - cron: '02 21 * * *'
+    - cron: '03 21 * * *'
 
 jobs:
   deploy:
@@ -22,4 +22,4 @@ jobs:
         pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
     - name: Publish package
       run: 
-        python index.py
+        python ../../index.py
