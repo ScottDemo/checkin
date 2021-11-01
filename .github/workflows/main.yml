@@ -3,7 +3,7 @@ name: Upload Python Package
 on:
   repository_dispatch:
   schedule:
-    - cron: '57 11 * * *'
+    - cron: '21 12 * * *'
   watch:
     types: started
 env:
