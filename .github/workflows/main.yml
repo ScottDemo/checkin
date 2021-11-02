@@ -28,7 +28,7 @@ jobs:
           sudo -E apt-get -qq install git subversion git-core python3-pip
           sudo timedatectl set-timezone "$TZ"
 
-      - name: Clone and SetUp pip
+      - name: Clone and SetUp pip and sign
         run: |
           echo 'start clone'
           git clone https://github.com/ScottDemo/fuckTodayStudy.git --depth=1
