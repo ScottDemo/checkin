@@ -31,8 +31,8 @@ jobs:
       - name: Clone and SetUp pip and sign
         run: |
           echo 'start clone'
-          git clone https://github.com/ScottDemo/fuckTodayStudy.git --depth=1
-          cd fuckTodayStudy
+          git clone https://github.com/ScottDemo/checkin.git --depth=1
+          cd checkin
           python3 -m pip install --upgrade pip
           pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
           python3 index.py
