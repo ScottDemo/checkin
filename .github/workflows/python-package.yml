@@ -1,0 +1,38 @@
+name: Upload Python Package
+
+on:
+  repository_dispatch:
+  schedule:
+    - cron: '0 13 * * *'
+  watch:
+    types: started
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Auto-Attendance:
+
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.7'
+      - name: Initialization environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo -E apt-get -qq update
+          sudo -E apt-get -qq install git subversion git-core python3-pip
+          sudo timedatectl set-timezone "$TZ"
+
+      - name: Clone and SetUp pip and sign
+        run: |
+          echo 'start clone'
+          git clone https://github.com/ScottDemo/checkin.git --depth=1
+          cd checkin
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple
+          python3 index.py
