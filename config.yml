@@ -394,16 +394,16 @@ users:
       #password 密码
       password: 'z12345'
       #address 地址，定位信息
-      address: '中国吉林省长春市宽城区奋进乡地理路'
+      address: '山东省临沂市莒南县518国道'
       #sendKey 当sendType为0时代表邮箱，当sendType为1时代表接收消息的QQ号码，当sendType为2时代表接收消息的pushplus token
       sendKey: '3276586184@qq.com'
       #school 学校全称
       schoolName: 长春工业大学
       # 附上经纬度查询地址（请自行选择自己的学校地址，address，lon，lat都要填查询到的）：http://api.map.baidu.com/lbsapi/getpoint/index.html
       #lon 经度
-      lon: 125.397156
+      lon: 35.17486
       #lat 纬度
-      lat: 44.003724
+      lat: 118.83543
       #abnormalReason 反馈信息（这个一般不用配置，但是不能删除，删除会报错）
       abnormalReason: ''
       #photo 签到照片，不需要可不填，或者直接删除
